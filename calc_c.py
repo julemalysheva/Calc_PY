@@ -1,8 +1,8 @@
 import re
 
-def str_to_list(str_exp):
+def str_to_list(exp):
     # дальше пробую получить выражение из строки
-    # str_exp = exp.replace('i','j') что-то не получилась банальная замена в строке..
+    str_exp = exp.replace('i','j') if "i" in exp else exp    
     li_ch = re.split(r'\(|\)', str_exp)
     # убираем лишние '' - не смогла их обойти в регулярке
     li_ch = list(filter((lambda el: el != ''), li_ch))
@@ -10,7 +10,7 @@ def str_to_list(str_exp):
     li_zn = ['+', '*', '/', '-']
     li_ch = list(map((lambda el: complex(el) if el not in li_zn else el), li_ch))
 
-    print(li_ch) 
+    # print(li_ch) 
     return li_ch   
 
 # идет расчет по списку
@@ -50,5 +50,5 @@ def calc_compl(data):
     li_ch = str_to_list(data)
     # print(f'{data} = {calc(li_ch)}')
     # оставила для проверки
-    print(f'Расчет eval для проверки: строка {data} = {eval(data)}')
+    # print(f'Расчет eval для проверки: строка {data} = {eval(data)}')
     return calc(li_ch)

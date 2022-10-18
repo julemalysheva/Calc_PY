@@ -89,6 +89,6 @@ def calc(li_ch):
 def calc_rational(data):
     li_ch = str_to_list(data)
     # print(f'{data} = {calc(li_ch)}')
-    print(f'Расчет eval для проверки: {eval(data)}')
+    # print(f'Расчет eval для проверки: {eval(data)}')
     return calc(li_ch)
 
