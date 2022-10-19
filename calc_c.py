@@ -10,7 +10,6 @@ def str_to_list(exp):
     li_zn = ['+', '*', '/', '-']
     li_ch = list(map((lambda el: complex(el) if el not in li_zn else el), li_ch))
 
-    # print(li_ch) 
     return li_ch   
 
 # идет расчет по списку

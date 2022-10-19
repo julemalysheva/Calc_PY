@@ -2,8 +2,6 @@
 import logger as log
 
 
-
-
 def get_variant():
     # выдать пользователю список вариантов меню и запросить выбор
     print('''
@@ -65,8 +63,6 @@ def get_value():
         type_str = 'r'  
     data_input = (type_str, data)
 
-    # по ходу проверки ввода, если что-то пошло не так, записываем ошибку через ф-цию
-    # log.error_logger(передаем сюда ошибку)
     
     return data_input  # вернули кортеж
 
