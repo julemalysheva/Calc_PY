@@ -105,11 +105,11 @@ def view_data(data, title):
 
 
 def view_logger(fl):
+    log.view_log_logger(fl)  # записали это в лог,что выдали файл к просмотру
     # описать вывод строк из файла и
     with open(fl, 'r', encoding="utf8") as file:
         log_txt = file.read()
     print(log_txt)
-    log.view_log_logger(fl)  # записали это в лог,что выдали файл к просмотру
 
 
 # в процессе решить, возможно, нужно будет что-то объединить и пр.
