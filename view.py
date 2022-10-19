@@ -1,8 +1,14 @@
+
 import logger as log
+
+
+
+
 def get_variant():
     # выдать пользователю список вариантов меню и запросить выбор
     print('''
     Возможные пункты меню:
+
     1 - рассчитать выражение
     2 - посмотреть лог файл
     3 - выйти из программы
@@ -21,7 +27,10 @@ def get_variant():
         except:
             print('Некорректный ввод, введите число: 1, 2 или 3')
             log.error_logger('Некорректный ввод пункта меню')
+
     return menu
+
+
 
 def get_value():
     print('''
@@ -58,17 +67,21 @@ def get_value():
 
     # по ходу проверки ввода, если что-то пошло не так, записываем ошибку через ф-цию
     # log.error_logger(передаем сюда ошибку)
+    
     return data_input  # вернули кортеж
+
+
 
 def view_data(data, title):
     print('\nПолучен результат:')
     print(f'{title} = {data}')
     log.res_logger(data)  # показали рез-т и записали в лог
 
+
 def view_logger(fl):
+    log.view_log_logger(fl)  
     with open(fl, 'r', encoding="utf8") as file:
         log_txt = file.read()
     print(log_txt)
-    log.view_log_logger(fl)  # записали это в лог,что выдали файл к просмотру
-
+    
 
