@@ -3,10 +3,12 @@ from calc_c import calc_compl
 import view
 import logger as log
 
+
 # в зависимости от типа строки запускаем разный функционал
 # "r" - рациональ.,иначе - комплексные считаем
 def calc_data(t, data):
     return calc_rational(data) if t == "r" else calc_compl(data)
+
 
 def button_click():
     # запускаем цикл бесконечного вызова меню, пока не выберет 3 - Выход
@@ -15,10 +17,10 @@ def button_click():
         # если выбран пункт меню 1 - расчет
         if var == 1:
             # t-тип данных, value - сама строка
-            t, value = view.get_value() #значения из кортежа передали переменным
+            t, value = view.get_value()  # значения из кортежа передали переменным
             try:
-                result = calc_data(t, value) #и уже вызываем нужную ф-цию
-                view.view_data(result, value) #выдаем результат
+                result = calc_data(t, value)  # и уже вызываем нужную ф-цию
+                view.view_data(result, value)  # выдаем результат
             except:
                 log.error_logger('Некорректное выражение')
                 print('Некорректный ввод выражения')
